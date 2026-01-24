@@ -1,11 +1,11 @@
 import React from 'react'
 
-function App() {
+function SingUp() {
   return (
     <div>
-      app
+      
     </div>
   )
 }
 
-export default App
+export default SingUp
