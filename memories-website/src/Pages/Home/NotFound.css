@@ -1,0 +1,422 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@300;400;600&display=swap");
+
+/* Main wrapper - scoped styles */
+.notfound-memory-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%);
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+}
+
+.notfound-memory-wrapper * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Polaroid container */
+.polaroid-container {
+  position: relative;
+  perspective: 1000px;
+}
+
+/* Floating background polaroids */
+.floating-polaroid {
+  position: absolute;
+  width: 180px;
+  height: 200px;
+  background: white;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px 15px 45px 15px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.polaroid-1 {
+  top: -100px;
+  left: -200px;
+  transform: rotate(-15deg);
+  animation: float1 6s ease-in-out infinite;
+}
+
+.polaroid-2 {
+  top: 50px;
+  right: -220px;
+  transform: rotate(20deg);
+  animation: float2 7s ease-in-out infinite;
+}
+
+.polaroid-3 {
+  bottom: -80px;
+  left: -180px;
+  transform: rotate(-25deg);
+  animation: float3 8s ease-in-out infinite;
+}
+
+/* Main polaroid */
+.main-polaroid {
+  background: white;
+  padding: 20px 20px 60px 20px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: rotate(-2deg);
+  transition: transform 0.5s ease;
+  animation: slideIn 1s ease-out;
+}
+
+.main-polaroid:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+/* Polaroid photo area */
+.polaroid-photo {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glitch effect for 404 */
+.glitch-number {
+  font-size: 120px;
+  font-weight: 900;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  text-shadow: 
+    3px 3px 0 rgba(255, 0, 255, 0.5),
+    -3px -3px 0 rgba(0, 255, 255, 0.5);
+  animation: glitch 3s infinite;
+}
+
+.glitch-number::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: -2px 0 red;
+  animation: glitch-1 2s infinite linear alternate-reverse;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.glitch-number::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: 2px 0 blue;
+  animation: glitch-2 3s infinite linear alternate-reverse;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+/* Memory icon */
+.memory-icon {
+  width: 80px;
+  height: 80px;
+  margin-top: 20px;
+  color: white;
+  opacity: 0.8;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Polaroid caption */
+.polaroid-caption {
+  text-align: center;
+  padding: 25px 20px 10px 20px;
+}
+
+.memory-title {
+  font-family: 'Caveat', cursive;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.memory-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+/* Return button */
+.return-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 
+    0 4px 15px rgba(102, 126, 234, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.return-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 6px 20px rgba(102, 126, 234, 0.5),
+    0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.return-btn:active {
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  font-size: 20px;
+  animation: shake 2s infinite;
+}
+
+.btn-text {
+  letter-spacing: 0.5px;
+}
+
+/* Decorative hearts */
+.heart {
+  position: absolute;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.6);
+  animation: heartbeat 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.heart-1 {
+  top: 100px;
+  right: 80px;
+  animation-delay: 0s;
+}
+
+.heart-2 {
+  bottom: 120px;
+  left: 100px;
+  animation-delay: 0.7s;
+  font-size: 40px;
+}
+
+.heart-3 {
+  top: 200px;
+  left: 50px;
+  animation-delay: 1.4s;
+  font-size: 25px;
+}
+
+/* ========== ANIMATIONS ========== */
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotate(-2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(-2deg);
+  }
+}
+
+@keyframes float1 {
+  0%, 100% {
+    transform: translateY(0) rotate(-15deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(-12deg);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translateY(0) rotate(20deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(23deg);
+  }
+}
+
+@keyframes float3 {
+  0%, 100% {
+    transform: translateY(0) rotate(-25deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-22deg);
+  }
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+@keyframes glitch-1 {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  }
+  100% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(1.2);
+  }
+  20%, 40% {
+    transform: scale(1);
+  }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 768px) {
+  .polaroid-photo {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .glitch-number {
+    font-size: 90px;
+  }
+  
+  .memory-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .memory-title {
+    font-size: 28px;
+  }
+  
+  .memory-text {
+    font-size: 14px;
+  }
+  
+  .floating-polaroid {
+    width: 140px;
+    height: 160px;
+  }
+  
+  .polaroid-1 {
+    left: -150px;
+  }
+  
+  .polaroid-2 {
+    right: -150px;
+  }
+  
+  .polaroid-3 {
+    left: -130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .polaroid-photo {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .glitch-number {
+    font-size: 70px;
+  }
+  
+  .memory-icon {
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+  }
+  
+  .memory-title {
+    font-size: 24px;
+  }
+  
+  .memory-text {
+    font-size: 13px;
+  }
+  
+  .return-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+  
+  .btn-icon {
+    font-size: 18px;
+  }
+  
+  .floating-polaroid {
+    display: none;
+  }
+  
+  .heart {
+    font-size: 20px;
+  }
+  
+  .heart-2 {
+    font-size: 25px;
+  }
+}
