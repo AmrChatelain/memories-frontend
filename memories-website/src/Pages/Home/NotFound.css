@@ -30,7 +30,7 @@
   width: 180px;
   height: 200px;
   background: white;
-  box-shadow: 
+  box-shadow:
     0 10px 40px rgba(0, 0, 0, 0.2),
     0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 15px 15px 45px 15px;
@@ -63,7 +63,7 @@
 .main-polaroid {
   background: white;
   padding: 20px 20px 60px 20px;
-  box-shadow: 
+  box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.3),
     0 5px 15px rgba(0, 0, 0, 0.2);
   transform: rotate(-2deg);
@@ -93,12 +93,31 @@
   font-size: 120px;
   font-weight: 900;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   position: relative;
-  text-shadow: 
+  text-shadow:
     3px 3px 0 rgba(255, 0, 255, 0.5),
     -3px -3px 0 rgba(0, 255, 255, 0.5);
   animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
 }
 
 .glitch-number::before {
@@ -110,6 +129,15 @@
   clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
 }
 
+@keyframes glitch-1 {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  }
+  100% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+  }
+}
+
 .glitch-number::after {
   content: attr(data-text);
   position: absolute;
@@ -117,6 +145,15 @@
   text-shadow: 2px 0 blue;
   animation: glitch-2 3s infinite linear alternate-reverse;
   clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch-2 {
+  0% {
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  }
 }
 
 /* Memory icon */
@@ -136,7 +173,7 @@
 }
 
 .memory-title {
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
   font-size: 32px;
   color: #333;
   margin-bottom: 12px;
@@ -144,7 +181,7 @@
 }
 
 .memory-text {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 15px;
   color: #666;
   line-height: 1.6;
@@ -159,14 +196,14 @@
   border: none;
   padding: 14px 30px;
   border-radius: 50px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 
+  box-shadow:
     0 4px 15px rgba(102, 126, 234, 0.4),
     0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -174,7 +211,7 @@
 
 .return-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 
+  box-shadow:
     0 6px 20px rgba(102, 126, 234, 0.5),
     0 3px 10px rgba(0, 0, 0, 0.15);
 }
@@ -192,7 +229,6 @@
   letter-spacing: 0.5px;
 }
 
-/* Decorative hearts */
 .heart {
   position: absolute;
   font-size: 30px;
@@ -235,7 +271,8 @@
 }
 
 @keyframes float1 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(-15deg);
   }
   50% {
@@ -244,7 +281,8 @@
 }
 
 @keyframes float2 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(20deg);
   }
   50% {
@@ -253,7 +291,8 @@
 }
 
 @keyframes float3 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(-25deg);
   }
   50% {
@@ -261,44 +300,9 @@
   }
 }
 
-@keyframes glitch {
-  0%, 100% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    transform: translate(2px, 2px);
-  }
-  80% {
-    transform: translate(2px, -2px);
-  }
-}
-
-@keyframes glitch-1 {
-  0% {
-    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-  }
-  100% {
-    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
-  }
-}
-
-@keyframes glitch-2 {
-  0% {
-    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
-  }
-  100% {
-    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
-  }
-}
-
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.8;
   }
@@ -309,7 +313,8 @@
 }
 
 @keyframes shake {
-  0%, 100% {
+  0%,
+  100% {
     transform: rotate(0deg);
   }
   25% {
@@ -321,13 +326,16 @@
 }
 
 @keyframes heartbeat {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
-  10%, 30% {
+  10%,
+  30% {
     transform: scale(1.2);
   }
-  20%, 40% {
+  20%,
+  40% {
     transform: scale(1);
   }
 }
@@ -339,37 +347,37 @@
     width: 300px;
     height: 300px;
   }
-  
+
   .glitch-number {
     font-size: 90px;
   }
-  
+
   .memory-icon {
     width: 60px;
     height: 60px;
   }
-  
+
   .memory-title {
     font-size: 28px;
   }
-  
+
   .memory-text {
     font-size: 14px;
   }
-  
+
   .floating-polaroid {
     width: 140px;
     height: 160px;
   }
-  
+
   .polaroid-1 {
     left: -150px;
   }
-  
+
   .polaroid-2 {
     right: -150px;
   }
-  
+
   .polaroid-3 {
     left: -130px;
   }
@@ -380,42 +388,42 @@
     width: 250px;
     height: 250px;
   }
-  
+
   .glitch-number {
     font-size: 70px;
   }
-  
+
   .memory-icon {
     width: 50px;
     height: 50px;
     margin-top: 15px;
   }
-  
+
   .memory-title {
     font-size: 24px;
   }
-  
+
   .memory-text {
     font-size: 13px;
   }
-  
+
   .return-btn {
     padding: 12px 24px;
     font-size: 14px;
   }
-  
+
   .btn-icon {
     font-size: 18px;
   }
-  
+
   .floating-polaroid {
     display: none;
   }
-  
+
   .heart {
     font-size: 20px;
   }
-  
+
   .heart-2 {
     font-size: 25px;
   }

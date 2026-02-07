@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
-
 :root {
   --primary-purple: #667eea;
   --primary-dark: #764ba2;
   --secondary-blue: #2a5298;
   --secondary-dark: #1e3c72;
-  
+
   /* Grays */
   --gray-50: #f7fafc;
   --gray-100: #edf2f7;
@@ -15,12 +14,12 @@
   --gray-500: #718096;
   --gray-600: #4a5568;
   --gray-700: #2d3748;
-  
+
   /* Status colors */
   --success: #48bb78;
   --error: #f56565;
   --warning: #ed8936;
-  
+
   --bg-main: #fdfdfd;
   --bg-light: #f7fafc;
   --bg-white: #ffffff;
@@ -34,7 +33,10 @@
   }
 
   html {
-    font-family: "Inter", -apple-system, sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      sans-serif;
     scroll-behavior: smooth;
   }
 
@@ -46,7 +48,12 @@
   }
 
   /* Headings use Poppins */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: var(--gray-700);
@@ -70,7 +77,9 @@
   }
 
   /* Input fields */
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     font-family: inherit;
   }
 

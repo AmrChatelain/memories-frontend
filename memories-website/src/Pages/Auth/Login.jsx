@@ -66,7 +66,7 @@ function Login() {
             <p>Sign in to access your memories</p>
           </div>
 
-          {/* Submit handled here */}
+          {/* Submit handled */}
           <form onSubmit={handelLogin} noValidate>
             <div className="input-group">
               <label htmlFor="email">Email</label>
@@ -111,7 +111,7 @@ function Login() {
           </div>
         </div>
 
-        {/* Decorative elements */}
+        
         <div className="floating-shape shape-1"></div>
         <div className="floating-shape shape-2"></div>
         <div className="floating-shape shape-3"></div>

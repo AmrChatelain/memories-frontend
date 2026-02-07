@@ -9,6 +9,7 @@ import Home from "./Pages/Home/Home";
 import Login from "./Pages/Auth/Login";
 import SignUp from "./Pages/Auth/SignUp";
 import NotFound from "./Pages/Home/NotFound";
+import Tags from "./Pages/Home/Tags";
 
 function App() {
   return (
@@ -20,9 +21,11 @@ function App() {
         {/* Public routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
+        
 
         {/* Protected route */}
         <Route path="/dashboard" element={<Home />} />
+        <Route path="/tags/" element={<Tags />} />
 
         {/* 404 */}
         <Route path="*" element={<NotFound />} />
